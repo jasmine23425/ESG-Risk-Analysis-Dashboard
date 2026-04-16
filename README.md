@@ -82,6 +82,7 @@ The project follows a coherent Python-based analytical workflow:
 - `ESG_Risk_Analysis_Notebook.ipynb` – the Python notebook showing the analytical workflow
 - `SP 500 ESG Risk Ratings.csv` – the dataset used in the project
 - `README.md` – project documentation
+- `requirements.txt` – required Python packages for local running
 
 ## Tools and Libraries
 
@@ -100,7 +101,12 @@ This project was developed using:
    - `app.py`
    - `SP 500 ESG Risk Ratings.csv`
 
-2. Install the required Python libraries if they are not already installed:
+2. Install the required Python libraries if they are not already installed:  
+   `pip install streamlit pandas matplotlib seaborn`
+
+3. Open a terminal in the project folder.
+
+4. Run the following command:
 
 ```bash
-pip install streamlit pandas matplotlib seaborn
+streamlit run app.py
