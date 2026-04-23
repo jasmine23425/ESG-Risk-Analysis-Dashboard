@@ -1,46 +1,14 @@
 # ESG Risk Analysis Dashboard
 
-## Project Overview
+## 1. Problem & User
+This project explores how ESG risk varies across S&P 500 companies and sectors using Python and Streamlit. It is designed for business, finance, and accounting students, as well as general users who want to understand and compare corporate ESG risk in an interactive way.
 
-This project is an interactive ESG Risk Analysis Dashboard developed with Python and Streamlit. It is based on ESG risk rating data for S&P 500 companies and is designed to help users explore ESG performance from multiple perspectives, including company-level detail, sector-level comparison, ESG component structure, and ranking analysis.
+## 2. Data
+**Source:** S&P 500 ESG Risk Ratings dataset from Kaggle  
+**Dataset link:** https://www.kaggle.com/datasets/pritish509/s-and-p-500-esg-risk-ratings  
+**Access date:** 14 April 2026  
 
-The project was created as a small Python-based data product for a business-related analytical task. Instead of presenting only raw code or static graphs, it transforms the analysis into an interactive dashboard that users can explore directly.
-
-## Analytical Problem
-
-The analytical problem addressed in this project is how to use Python to analyse and communicate ESG risk patterns among S&P 500 companies in a clear and user-friendly way. The project focuses on identifying:
-
-- how ESG risk varies across sectors;
-- how individual companies differ in their ESG profiles;
-- how the environment, social, and governance dimensions compare on average;
-- how company size may relate to ESG risk;
-- which companies appear to have the lowest and highest ESG risk scores.
-
-## Intended Users
-
-This dashboard is designed for:
-
-- business, finance, and accounting students;
-- users interested in ESG and sustainability analysis;
-- beginner-level investors or analysts who want to compare firms based on ESG-related indicators;
-- general users who want to explore corporate ESG risk data through an interactive interface.
-
-## Dataset
-
-The project uses the **S&P 500 ESG Risk Ratings** dataset obtained from Kaggle.
-
-### Dataset link
-https://www.kaggle.com/datasets/pritish509/s-and-p-500-esg-risk-ratings
-
-### Access date
-14 April 2026
-
-### Why this dataset was selected
-
-This dataset was selected because it is directly relevant to a business and sustainability context and contains multiple variables that support descriptive analysis and dashboard design. It includes firm-level ESG risk information as well as sector, industry, and company characteristics, making it suitable for comparison, filtering, and visual exploration.
-
-### Main variables used in the project
-
+**Key fields used:**
 - Name
 - Symbol
 - Sector
@@ -51,62 +19,38 @@ This dataset was selected because it is directly relevant to a business and sust
 - Governance Risk Score
 - Full Time Employees
 
-## Product Features
+## 3. Methods
+The main Python workflow for this project included:
+1. Loading the dataset into Python using pandas  
+2. Inspecting the dataset structure and selecting relevant variables  
+3. Cleaning the data by converting numeric fields, handling missing values, and removing duplicates  
+4. Creating an ESG risk category variable for easier interpretation  
+5. Producing descriptive analysis and visualisations using matplotlib and seaborn  
+6. Building an interactive dashboard in Streamlit with filters, comparison tools, and ranking views  
 
-The dashboard includes the following functions:
+## 4. Key Findings
+- ESG risk varies across sectors, with some sectors showing higher average risk scores than others.  
+- Companies within the same sector can still have noticeably different ESG risk profiles.  
+- Total ESG risk is influenced by a combination of environmental, social, and governance factors rather than one single component.  
+- Company comparison and ranking views help identify firms with relatively lower or higher ESG risk scores.  
+- The dashboard makes ESG analysis easier to explore through interactive filtering and visualisation.  
 
-- **Interactive filter panel** for sector, ESG score range, employee range, and ESG risk category;
-- **Single company analysis** with company details and ESG composition;
-- **Keyword-based company search** in the single company tab;
-- **Company comparison** across total ESG score and ESG component scores;
-- **Sector analysis** showing average ESG risk by sector and ESG score distribution;
-- **ESG relationships analysis** including average ESG component scores, employee size vs ESG risk, and a correlation matrix;
-- **Ranking analysis** showing the companies with the lowest and highest ESG risk scores;
-- **Download button** for exporting the filtered dataset.
-
-## Python Workflow
-
-The project follows a coherent Python-based analytical workflow:
-
-1. define the analytical problem and target users;
-2. load the ESG dataset into Python;
-3. inspect the data structure and identify relevant variables;
-4. clean and prepare the data by converting numeric fields, removing missing key records, and dropping duplicates;
-5. create an ESG risk category variable for easier interpretation;
-6. conduct descriptive analysis and visualisation;
-7. translate the analysis into an interactive Streamlit dashboard.
-
-## Files in This Project
-
-- `app.py` – the Streamlit dashboard application
-- `ESG_Risk_Analysis_Notebook.ipynb` – the Python notebook showing the analytical workflow
-- `SP 500 ESG Risk Ratings.csv` – the dataset used in the project
-- `README.md` – project documentation
-- `requirements.txt` – required Python packages for local running
-
-## Tools and Libraries
-
-This project was developed using:
-
-- Python
-- Streamlit
-- Pandas
-- Matplotlib
-- Seaborn
-- Jupyter Notebook
-
-## How to Run the Dashboard
-
-1. Make sure the following files are stored in the same folder:
+## 5. How to run
+1. Clone or download this repository.  
+2. Make sure the following files are in the same folder:
    - `app.py`
    - `SP 500 ESG Risk Ratings.csv`
+3. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+4. Open a terminal in the project folder and run:
+    streamlit run app.py
 
-2. Install the required Python libraries if they are not already installed:  
-   `pip install streamlit pandas matplotlib seaborn`
+## 6. Product link / Demo
+GitHub repository:
+https://github.com/jasmine23425/ESG-Risk-Analysis-Dashboard/tree/main
+Demo video:
+Submitted through Mediasite for ACC102 Track 4.
 
-3. Open a terminal in the project folder.
-
-4. Run the following command:
-
-```bash
-streamlit run app.py
+## 7. Limitations & next steps
+This project is based on one secondary dataset, so the quality of the results depends on the completeness and reliability of that source. Some variables, especially employee data, contain missing values, and the analysis is descriptive rather than predictive or causal. In future, the project could be improved by adding more data sources, including historical ESG data for time-series analysis, and providing clearer explanations for non-technical users.
